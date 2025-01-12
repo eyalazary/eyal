@@ -8,18 +8,31 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed h-full w-64 z-50 top-0 right-0">
-        <div class="flex flex-col h-full">
-            <!-- Logo/Title -->
-            <div class="p-6 border-b">
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
                 <div class="text-xl font-bold">
                     אימון אדלריאני בטבע
                 </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 space-x-reverse">
+                    <a href="#benefits" class="hover:text-green-600 transition-colors">מה במפגש</a>
+                    <a href="#why-nature" class="hover:text-green-600 transition-colors">למה בטבע</a>
+                    <a href="#about" class="hover:text-green-600 transition-colors">עלי</a>
+                    <a href="#testimonials" class="hover:text-green-600 transition-colors">המלצות</a>
+                    <a href="#details" class="hover:text-green-600 transition-colors">פרטים</a>
+                    <a href="#contact" class="hover:text-green-600 transition-colors">צור קשר</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
-            
-            <!-- Navigation Links -->
-            <div class="flex-1 p-6">
-                <div class="space-y-6">
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="py-4 space-y-4">
                     <a href="#benefits" class="block hover:text-green-600 transition-colors">מה במפגש</a>
                     <a href="#why-nature" class="block hover:text-green-600 transition-colors">למה בטבע</a>
                     <a href="#about" class="block hover:text-green-600 transition-colors">עלי</a>
@@ -28,89 +41,175 @@
                     <a href="#contact" class="block hover:text-green-600 transition-colors">צור קשר</a>
                 </div>
             </div>
-
-            <!-- Mobile Menu Toggle -->
-            <button class="lg:hidden absolute top-4 left-4" id="mobile-menu-button">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
         </div>
     </nav>
 
-    <!-- Main Content with Padding for Nav -->
-    <div class="mr-64">
-        <!-- Hero Section -->
-        <header class="bg-green-50 py-16">
-            <div class="container mx-auto px-4 max-w-4xl text-center">
-                <h1 class="text-4xl font-bold mb-6">
-                    מפגש היכרות אישי עם אימון אדלריאני בטבע 🌳
-                </h1>
-                <h2 class="text-2xl text-gray-600 mb-8">
-                    המתנה שאתם מפרגנים לעצמכם
-                </h2>
-                <img src="./Like-forest.jpg" alt="אימון בטבע" class="rounded-lg shadow-lg mb-8 mx-auto">
-                <button class="bg-green-600 text-white px-8 py-4 rounded-full text-xl hover:bg-green-700 transition-colors">
-                    קבע מפגש היכרות
+    <!-- Hero Section -->
+    <header class="bg-green-50 py-16 pt-32">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <h1 class="text-4xl font-bold mb-6">
+                מפגש היכרות אישי עם אימון אדלריאני בטבע 🌳
+            </h1>
+            <h2 class="text-2xl text-gray-600 mb-8">
+                המתנה שאתם מפרגנים לעצמכם
+            </h2>
+            <img src="./Like-forest.jpg" alt="אימון בטבע" class="rounded-lg shadow-lg mb-8 mx-auto">
+            <button class="bg-green-600 text-white px-8 py-4 rounded-full text-xl hover:bg-green-700 transition-colors">
+                קבע מפגש היכרות
+            </button>
+        </div>
+    </header>
+
+    <!-- Benefits -->
+    <section id="benefits" class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-bold mb-12 text-center">מה נעשה במפגש?</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-green-50 rounded-lg">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="font-bold mb-2">תחדדו</h3>
+                    <p>את החוזקות והמשאבים הייחודיים שלכם</p>
+                </div>
+                <div class="text-center p-6 bg-green-50 rounded-lg">
+                    <div class="text-4xl mb-4">🎨</div>
+                    <h3 class="font-bold mb-2">תדמיינו</h3>
+                    <p>תמונת עתיד מיטבית וברורה</p>
+                </div>
+                <div class="text-center p-6 bg-green-50 rounded-lg">
+                    <div class="text-4xl mb-4">⭐</div>
+                    <h3 class="font-bold mb-2">תבחרו</h3>
+                    <p>את מה שבאמת חשוב לכם בדרך</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Nature -->
+    <section id="why-nature" class="py-16 bg-green-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="md:flex items-center gap-12">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-6">למה בטבע?</h2>
+                    <p class="text-lg leading-relaxed">
+                        הריחוק מהרעש והשגרה מאפשר לנו לראות דברים בצורה מפוקסת, לחשוב בבהירות ולהתחבר לעצמנו. רחוק מהמסכים והטלפונים, נוכל להתמקד במה שבאמת חשוב.
+                    </p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="./trails-5.jpg" alt="נוף טבע" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Coach -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="md:flex items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="./eyal-1.jpg" alt="המאמן" class="rounded-full shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6">מי אני?</h2>
+                    <ul class="space-y-4 text-lg">
+                        <li>✅ מאמן אדלריאני מוסמך</li>
+                        <li>✅ מנהל בכיר בתעשיית ההייטק</li>
+                        <li>✅ מומחה בפיתוח אישי וניהולי</li>
+                        <li>✅ ניסיון עשיר בליווי אנשים להצלחה</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section id="testimonials" class="py-16 bg-green-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-bold mb-12 text-center">לקוחות מספרים</h2>
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <div class="md:flex gap-8 items-start">
+                    <img src="./idan-eyal-1.jpg" alt="עידן" class="rounded-full shadow mb-6 md:mb-0">
+                    <div>
+                        <h3 class="font-bold text-xl mb-4">עידן</h3>
+                        <p class="text-lg leading-relaxed mb-6">
+                            "אימון ביער' לא זום, לא חדר סגור. פשוט יוצאים החוצה. הולכים בין העצים, מדברים, מטפסים, מתמודדים – ומתפתחים. דרך פשוטה ומרגשת להזכיר לעצמנו שהמסלול בחיים הוא הבחירה שלנו, בדיוק כמו הדרך בה אנחנו צועדים."
+                        </p>
+                        <p class="text-lg leading-relaxed">
+                            "במהלך ההליכה, מצאתי את עצמי משחרר אמונות שגויות. בין עלייה לירידה, בין מחשבה לשתיקה, הצלחנו ל'כבוש' את ההר - לא רק במובן הפיזי, אלא גם פנימי, ובעיקר למדתי משהו חדש על החיים ועל עצמי."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Details & Price -->
+    <section id="details" class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-bold mb-12 text-center">פרטים טכניים</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-bold text-xl mb-4">מה כולל המפגש?</h3>
+                    <ul class="space-y-3">
+                        <li>⏰ שעה וחצי של אימון אישי</li>
+                        <li>🌳 הליכה מונחית בטבע</li>
+                        <li>☕ קפה ומאפה לסיכום</li>
+                        <li>📝 תובנות וכיווני פעולה</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-bold text-xl mb-4">מידע חשוב</h3>
+                    <ul class="space-y-3">
+                        <li>📍 מיקום: שבילי הכרמל</li>
+                        <li>💰 מחיר: 180 ש"ח</li>
+                        <li>👕 ביגוד: נוח להליכה</li>
+                        <li>🌧️ במקרה גשם: תיאום חדש</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="py-16 bg-green-50">
+        <div class="container mx-auto px-4 max-w-md">
+            <h2 class="text-3xl font-bold mb-8 text-center">קביעת מפגש היכרות</h2>
+            <form class="space-y-6 bg-white p-8 rounded-lg shadow-lg">
+                <div>
+                    <label class="block mb-2">שם מלא</label>
+                    <input type="text" class="w-full p-3 border rounded" required>
+                </div>
+                <div>
+                    <label class="block mb-2">טלפון</label>
+                    <input type="tel" class="w-full p-3 border rounded" required>
+                </div>
+                <div>
+                    <label class="block mb-2">אימייל</label>
+                    <input type="email" class="w-full p-3 border rounded" required>
+                </div>
+                <div>
+                    <label class="block mb-2">זמנים מועדפים</label>
+                    <textarea class="w-full p-3 border rounded h-32"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors">
+                    שליחה
                 </button>
-            </div>
-        </header>
+            </form>
+        </div>
+    </section>
 
-        <!-- Rest of the sections remain the same, just moved inside the main content div -->
-        <!-- Benefits -->
-        <section id="benefits" class="py-16 bg-white">
-            <!-- Same content as before -->
-        </section>
-
-        <!-- Why Nature -->
-        <section id="why-nature" class="py-16 bg-green-50">
-            <!-- Same content as before -->
-        </section>
-
-        <!-- About Coach -->
-        <section id="about" class="py-16 bg-white">
-            <!-- Same content as before -->
-        </section>
-
-        <!-- Testimonial -->
-        <section id="testimonials" class="py-16 bg-green-50">
-            <!-- Same content as before -->
-        </section>
-        
-        <!-- Details & Price -->
-        <section id="details" class="py-16 bg-white">
-            <!-- Same content as before -->
-        </section>
-
-        <!-- Contact Form -->
-        <section id="contact" class="py-16 bg-green-50">
-            <!-- Same content as before -->
-        </section>
-
-        <!-- FAQ -->
-        <section class="py-16 bg-white">
-            <!-- Same content as before -->
-        </section>
-
-        <!-- Footer -->
-        <footer class="bg-gray-800 text-white py-8">
-            <div class="container mx-auto px-4 text-center">
-                <p>© 2025 אימון אדלריאני בטבע. כל הזכויות שמורות.</p>
-            </div>
-        </footer>
-    </div>
-
-    <!-- JavaScript for Mobile Menu -->
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const nav = document.querySelector('nav');
-        const mainContent = document.querySelector('.mr-64');
-
-        mobileMenuButton.addEventListener('click', () => {
-            nav.classList.toggle('hidden');
-            mainContent.classList.toggle('mr-0');
-            mainContent.classList.toggle('mr-64');
-        });
-    </script>
-</body>
-</html>
+    <!-- FAQ -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-bold mb-12 text-center">שאלות נפוצות</h2>
+            <div class="space-y-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-bold mb-2">איך להתכונן למפגש?</h3>
+                    <p>הגיעו בבגדים נוחים להליכה, נעלי הליכה/ספורט, ובקבוק מים. אנחנו נדאג לכל השאר!</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-bold mb-2">מה קורה במקרה של מזג אוויר גרוע?</h3>
+                    <p>במקרה של גשם או תנאי מזג אוויר קיצוניים, נתאם מועד חלופי בהקדם האפשרי.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-bold mb-2">האם נדרש ניסיון קודם באימון?</h3>
+                    <p>ל
